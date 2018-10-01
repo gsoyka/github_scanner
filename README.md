@@ -13,6 +13,8 @@ This is a CLI wrapper around Trufflehog, designed to scan Github repos for poten
 At a minimum, you must specify a Github Username and Token.  By default, we will scan all public repos
 owned by a given user, along with any public repos in any organizations that user belongs to.
 
+`github_scanner.py --user gsoyka --token my_api_token`
+
 ### Configuration Options
 
 * `-t`, `--token`: Github API Key
