@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import urllib.request
 import urllib.parse
 import base64
@@ -119,7 +120,10 @@ def scan_repos(repos):
     print("\033[1;32;40m \n Checking: " + repo_name)
     cmd = "trufflehog --regex --entropy=False " + repo_name
     try:
-      output = subprocess.check_output(cmd, shell=True)
+      output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
+    except subprocess.CalledProcessError as e:
+      print("\033[1;31;40m Problems found in repo: " + repo_name)
+      print(e.output)
     except Exception as e:
       print("\033[1;31;40m Problem checking repo: " + repo_name)
 
