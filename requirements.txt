@@ -1,2 +1,2 @@
-argparse
-PyGithub
+PyGithub>=1.43.8
+trufflehog>=2.0.99
